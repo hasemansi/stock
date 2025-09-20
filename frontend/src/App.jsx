@@ -18,7 +18,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './components/Auth/Login';
 import Register from './components/Auth/Register';
-// import UserDetails from './components/Auth/UserDetails';
+import Dashboard from './components/Auth/Dashboard';
 
 function App() {
   const handleFilter = (e) => {
@@ -34,7 +34,7 @@ function App() {
           <Route path="/" element={<Login />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          {/* <Route path="/userDetails" element={<UserDetails />} /> */}
+          <Route path="/dashboard" element={<Dashboard />} />
           {/* Add more routes here if needed */}
         </Routes>
       </div>

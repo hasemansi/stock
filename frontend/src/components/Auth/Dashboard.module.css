@@ -1,0 +1,51 @@
+.dashboardContainer {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 260px;
+  background: #2d3748;
+  color: #fff;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
+}
+
+.sidebarTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
+}
+
+.navList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navItem {
+  margin-bottom: 1.2rem;
+}
+
+.navLink {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.08rem;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+}
+
+.navLink:hover {
+  color: #63b3ed;
+}
+
+.mainContent {
+  flex: 1;
+  padding: 2.5rem;
+  background: #f7fafc;
+  overflow-y: auto;
+}
