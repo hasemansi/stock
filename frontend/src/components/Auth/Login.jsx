@@ -36,7 +36,7 @@ const Login = () => {
                 // No localStorage usage anymore
 
                 // Navigate to dashboard or protected route
-                // navigate('/dashboard'); // adjust the route to navigate next page
+                navigate('/dashboard'); // adjust the route to navigate next page
             }
         } catch (error) {
             console.error('Login error:', error);
