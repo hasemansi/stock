@@ -1,0 +1,63 @@
+.updateCollege {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 25px 30px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.updateCollege h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #0d6efd;
+  font-weight: 600;
+}
+
+.updateCollegeForm .inputGroup {
+  margin-bottom: 15px;
+}
+
+.updateCollegeForm label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.updateCollegeForm input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.updateCollegeForm input:focus {
+  border-color: #0d6efd;
+  outline: none;
+  box-shadow: 0px 0px 6px rgba(13, 110, 253, 0.25);
+}
+
+.updateCollegeForm button {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  background: #0d6efd;
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  transition: background 0.3s ease-in-out;
+}
+
+.updateCollegeForm button:hover {
+  background: #0b5ed7;
+}
+
+.updateCollege .btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 15px;
+}

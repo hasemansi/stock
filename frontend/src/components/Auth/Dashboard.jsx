@@ -13,10 +13,10 @@ export default function Dashboard({ children }) {
                     <h3 className={styles.sectionTitle}>College Management</h3>
                     <ul className={styles.navList}>
                         <li className={styles.navItem}>
-                            <Link className={styles.navLink} to="/college">🏫 College</Link>
+                            <Link className={styles.navLink} to="/colleges">🏫 College</Link>
                         </li>
                         <li className={styles.navItem}>
-                            <Link className={styles.navLink} to="/department">🏢 Department</Link>
+                            <Link className={styles.navLink} to="/departments">🏢 Department</Link>
                         </li>
                         <li className={styles.navItem}>
                             <Link className={styles.navLink} to="/faculty">👩‍🏫 Faculty</Link>

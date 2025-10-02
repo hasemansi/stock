@@ -1,0 +1,104 @@
+/* Wrapper for the department table */
+.departmentTable {
+  padding: 30px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading */
+.departmentTable h3 {
+  margin-bottom: 25px;
+  font-size: 1.8rem;
+  color: #0c2c4b;
+  text-align: center;
+}
+
+/* Table styling */
+.departmentTable table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Table header */
+.departmentTable table th {
+  padding: 15px;
+  text-align: center;
+  background-color: #0c2c4b;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* Table cells */
+.departmentTable table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #dee2e6;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+/* Hover effect on rows */
+.departmentTable table tr:hover {
+  background-color: #f1f5f9;
+  transition: 0.3s;
+}
+
+/* Button spacing */
+.departmentTable .btn {
+  margin-right: 8px;
+  margin-bottom: 5px;
+}
+
+/* Action buttons */
+.departmentTable .actionButtons {
+  display: flex;
+  gap: 8px;
+}
+
+.departmentTable .actionButtons button {
+  padding: 6px 12px;
+  font-size: 0.9rem;
+}
+
+/* Responsive table */
+@media screen and (max-width: 768px) {
+  .departmentTable table,
+  .departmentTable table thead,
+  .departmentTable table tbody,
+  .departmentTable table th,
+  .departmentTable table td,
+  .departmentTable table tr {
+    display: block;
+  }
+
+  .departmentTable table thead tr {
+    display: none;
+  }
+
+  .departmentTable table tr {
+    margin-bottom: 15px;
+    border-bottom: 2px solid #dee2e6;
+    padding: 10px;
+  }
+
+  .departmentTable table td {
+    text-align: center;
+    padding-left: 50%;
+    position: relative;
+  }
+
+  .departmentTable table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 15px;
+    width: calc(50% - 15px);
+    padding-right: 10px;
+    font-weight: 600;
+    text-align: left;
+  }
+}

@@ -81,6 +81,14 @@ export const refreshAccessToken = async (req, res) => {
   }
 };
 
+export const getAllUsers = async (req, res) => {
+  try {
+    const users = await User.find().select('_id name'); // only id and name
+    res.status(200).json(users);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
 
 // LOGOUT
 export const logout = async (req, res) => {

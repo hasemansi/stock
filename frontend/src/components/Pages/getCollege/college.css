@@ -1,0 +1,83 @@
+/* Container */
+.collegeTable {
+  padding: 20px;
+  background: #f9f9f9;
+  min-height: 100vh;
+}
+
+/* Table Styles */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.table th {
+  background: #0e223f;
+  color: #fff;
+  text-align: center;
+  font-weight: 600;
+  padding: 12px;
+}
+
+.table td {
+  text-align: center;
+  padding: 10px;
+  vertical-align: middle;
+}
+
+/* Buttons */
+.btn {
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.btn-primary {
+  background-color: #0f213c;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #0d213e;
+}
+
+.btn-success {
+  background-color: #198754;
+  border: none;
+}
+
+.btn-success:hover {
+  background-color: #157347;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  border: none;
+}
+
+.btn-danger:hover {
+  background-color: #bb2d3b;
+}
+
+/* Action buttons inside table */
+.actionButtons {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* Add College button */
+.collegeTable .btn-primary {
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+/* Hover effect for rows */
+.table tbody tr:hover {
+  background-color: #f1f7ff;
+  transition: 0.2s ease-in-out;
+}
