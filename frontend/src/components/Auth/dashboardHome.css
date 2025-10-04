@@ -1,0 +1,81 @@
+.dashboardHome {
+  padding: 25px;
+  min-height: 100vh;
+  background: #f4f6f8;
+}
+
+.dashboardHome h2 {
+  color: #0c2c4b;
+  margin-bottom: 8px;
+}
+
+.dashboardHome p {
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Quick Links Grid */
+.quickLinks {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.linkCard {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.linkCard:hover {
+  transform: translateY(-5px);
+}
+
+.linkCard h3 {
+  color: #0d6efd;
+  margin-bottom: 8px;
+}
+
+.linkCard p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 12px;
+}
+
+.btn-link {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 6px;
+  background: #0d6efd;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.btn-link:hover {
+  background: #0b5ed7;
+}
+
+/* Recent Section */
+.recentSection h3 {
+  margin-top: 20px;
+  color: #0c2c4b;
+}
+
+.recentSection ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 20px;
+}
+
+.recentSection ul li {
+  background: #ffffff;
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}

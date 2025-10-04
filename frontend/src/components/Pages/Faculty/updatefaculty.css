@@ -1,0 +1,42 @@
+.updateFaculty {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 20px 25px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.updateFaculty h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #10104c;
+  font-weight: 600;
+}
+
+.updateFacultyForm .inputGroup {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.updateFacultyForm label {
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.updateFacultyForm input,
+.updateFacultyForm select {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.updateFacultyForm button {
+  padding: 10px;
+  border-radius: 6px;
+  background: #160c49;
+  color: #fff;
+  border: none;
+  font-weight: 600;
+}

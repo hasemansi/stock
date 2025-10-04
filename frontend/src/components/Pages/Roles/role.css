@@ -1,0 +1,95 @@
+/* Container */
+.roleTable {
+  padding: 20px;
+  background: #f9f9f9;
+  min-height: 100vh;
+}
+
+/* Header with button */
+.roleTable .headerSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.roleTable h3 {
+  margin: 0;
+  font-weight: 600;
+  color: #0e223f;
+}
+
+/* Table */
+.table {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border-collapse: collapse;
+}
+
+.table th {
+  background: #0e223f;
+  color: #fff;
+  text-align: center;
+  font-weight: 600;
+  padding: 12px;
+}
+
+.table td {
+  text-align: center;
+  padding: 10px;
+  vertical-align: middle;
+}
+
+.table tbody tr:hover {
+  background-color: #f1f7ff;
+  transition: 0.2s ease-in-out;
+}
+
+/* Action buttons */
+.actionButtons {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn {
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-primary {
+  background-color: #0f213c;
+  color: #fff;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #0d213e;
+}
+
+.btn-success {
+  background-color: #198754;
+  color: #fff;
+  border: none;
+}
+
+.btn-success:hover {
+  background-color: #157347;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+}
+
+.btn-danger:hover {
+  background-color: #bb2d3b;
+}

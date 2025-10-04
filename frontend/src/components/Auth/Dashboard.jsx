@@ -7,6 +7,15 @@ export default function Dashboard({ children }) {
             {/* Sidebar */}
             <aside className={styles.sidebar}>
                 <h2 className={styles.sidebarTitle}>College Stock</h2>
+                <div className={styles.section}>
+                    <ul className={styles.navList}>
+                        <li className={styles.navItem}>
+                            <Link className={styles.navLink} to="/dashboard">
+                                🏠 Dashboard Home
+                            </Link>
+                        </li>
+                    </ul>
+                </div>
 
                 {/* 1) College Management */}
                 <div className={styles.section}>
@@ -19,10 +28,14 @@ export default function Dashboard({ children }) {
                             <Link className={styles.navLink} to="/departments">🏢 Department</Link>
                         </li>
                         <li className={styles.navItem}>
-                            <Link className={styles.navLink} to="/faculty">👩‍🏫 Faculty</Link>
+                            <Link className={styles.navLink} to="/roles">🛡 Roles</Link>
                         </li>
                         <li className={styles.navItem}>
-                            <Link className={styles.navLink} to="/role">🛡 Roles</Link>
+                            <Link className={styles.navLink} to="/faculties">👩‍🏫 Faculty</Link>
+                        </li>
+
+                        <li className={styles.navItem}>
+                            <Link className={styles.navLink} to="/dept-faculty">🔗 Dept-Faculty</Link>
                         </li>
                     </ul>
                 </div>

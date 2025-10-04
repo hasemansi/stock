@@ -8,6 +8,9 @@ import bodyParser from 'body-parser';
 import authRoute from './routes/UserRoutes.js';
 import collegeRoute from './routes/collegeRoute.js';
 import departmentRoute from "./routes/departmentRoute.js";
+import roleRoute from "./routes/roleRoute.js";
+import facultyRoutes from "./routes/facultyRoute.js";
+import deptFaculty from './routes/deptFacultyRoutes.js';
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -25,6 +28,10 @@ app.use(bodyParser.json());
 app.use('/api/auth', authRoute);
 app.use('/api/colleges', collegeRoute);  // ✅ better to mount with /api/colleges
 app.use('/api/departments', departmentRoute);
+app.use('/api/roles', roleRoute);
+app.use('/api/faculties',facultyRoutes);
+app.use('/api/deptFaculty',deptFaculty);
+
 
 // Connect DB and Start Server
 const startServer = async () => {

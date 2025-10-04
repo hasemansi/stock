@@ -1,0 +1,45 @@
+.facultyTable {
+  padding: 20px;
+  background: #f9f9f9;
+  min-height: 100vh;
+}
+
+.facultyTable .headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.facultyTable h3 {
+  margin: 0;
+  font-weight: 600;
+  color: #0d213e;
+}
+
+.facultyTable .table {
+  background: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.facultyTable .table th {
+  background: #0e223f;
+  color: #fff;
+  padding: 12px;
+  text-align: center;
+}
+
+.facultyTable .table td {
+  text-align: center;
+  padding: 10px;
+}
+
+.actionButtons {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
