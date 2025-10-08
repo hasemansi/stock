@@ -28,6 +28,10 @@ import Order from "./components/Pages/Orders/Order";
 import AddOrder from "./components/Pages/Orders/AddOrder";
 import UpdateOrder from "./components/Pages/Orders/UpdateOrder";
 import OrderDetails from "./components/Pages/Orders/OrderDetails";
+import InwardEntryList from "./components/Pages/Inward-Entry/InwardEntryList";
+import AddInwardEntry from "./components/Pages/Inward-Entry/AddInwardEntry";
+import OutwardEntryList from "./components/Pages/Outward-Entry/OutwardEntryList";
+import AddOutwardEntry from "./components/Pages/Outward-Entry/AddOutwardEntry";
 
 function App() {
   return (
@@ -62,6 +66,10 @@ function App() {
         <Route path="/add-order" element={<AddOrder />} />
         <Route path="/update-order/:id" element={< UpdateOrder />} />
         <Route path="/order-details" element={< OrderDetails />} />
+        <Route path="/inward-entry" element={< InwardEntryList />} />
+        <Route path="/add-inward-entry" element={< AddInwardEntry />} />
+        <Route path="/outward-entry" element={< OutwardEntryList />} />
+        <Route path="/add-outward-entry" element={< AddOutwardEntry />} />
       </Routes>
     </Router>
   );

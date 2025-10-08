@@ -16,6 +16,8 @@ import supplierRoutes from "./routes/supplierRoute.js";
 import productRoute from "./routes/productRoute.js"
 import orderRoute from "./routes/orderRoute.js";
 import orderDetailsRoute from "./routes/orderDetailsRoute.js"
+import inwardEntry from './routes/inwardEntryRoute.js';
+import outwardEntry from './routes/outwardEntryRoute.js';
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -40,6 +42,8 @@ app.use("/api/suppliers", supplierRoutes);
 app.use("/api/products", productRoute)
 app.use('/api/orders', orderRoute);
 app.use('/api/order-details', orderDetailsRoute);
+app.use('/api/inward-entry',inwardEntry)
+app.use('/api/outward-entry',outwardEntry)
 
 // Connect DB and Start Server
 const startServer = async () => {

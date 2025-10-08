@@ -54,12 +54,12 @@ export default function DashboardHome() {
           <div className="linkCard">
             <h3>Suppliers</h3>
             <p>Manage suppliers</p>
-            <a href="/supplier" className="btn-link">Go</a>
+            <a href="/suppliers" className="btn-link">Go</a>
           </div>
           <div className="linkCard">
             <h3>Products</h3>
             <p>Manage products</p>
-            <a href="/product" className="btn-link">Go</a>
+            <a href="/products" className="btn-link">Go</a>
           </div>
         </div>
 
