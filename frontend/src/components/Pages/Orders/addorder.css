@@ -1,0 +1,144 @@
+.addOrder {
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  max-width: 900px;
+  margin: auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.addOrder h3 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.inputGroup {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.inputGroup label {
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #555;
+}
+
+.inputGroup input,
+.inputGroup select,
+.inputGroup textarea {
+  padding: 8px 10px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.inputGroup textarea {
+  min-height: 70px;
+  resize: vertical;
+}
+
+.productsGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr auto;
+  gap: 8px;
+  align-items: center;
+}
+
+.productsGrid .header {
+  font-weight: 600;
+  text-align: center;
+  padding: 6px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.productRow div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.productRow select,
+.productRow input {
+  width: 100%;
+  padding: 5px 6px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.smallBtn {
+  padding: 4px 8px;
+  font-size: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+  transition: 0.3s;
+}
+
+.smallBtn.secondary {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.smallBtn.secondary:hover {
+  background-color: #0056b3;
+}
+
+.smallBtn.danger {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.smallBtn.danger:hover {
+  background-color: #c82333;
+}
+
+.totalRow {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 15px;
+}
+
+.totalRow .label {
+  margin-right: 10px;
+}
+
+.actionsRow {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.actionsRow .btn {
+  padding: 8px 16px;
+  font-size: 15px;
+  border-radius: 6px;
+}
+
+.btn-primary {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #218838;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+.btn-secondary i {
+  margin-right: 6px;
+}

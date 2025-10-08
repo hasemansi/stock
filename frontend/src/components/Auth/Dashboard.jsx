@@ -57,17 +57,18 @@ export default function Dashboard({ children }) {
                 <div className={styles.section}>
                     <h3 className={styles.sectionTitle}>Transactions</h3>
                     <ul className={styles.navList}>
+
+                        <li className={styles.navItem}>
+                            <Link className={styles.navLink} to="/orders">📝 Order</Link>
+                        </li>
+                        <li className={styles.navItem}>
+                            <Link className={styles.navLink} to="/order-details">📋 Order Details</Link>
+                        </li>
                         <li className={styles.navItem}>
                             <Link className={styles.navLink} to="/inward-entry">⬆️ Receive Stock</Link>
                         </li>
                         <li className={styles.navItem}>
                             <Link className={styles.navLink} to="/outward-entry">⬇️ Issue Stock</Link>
-                        </li>
-                        <li className={styles.navItem}>
-                            <Link className={styles.navLink} to="/order">📝 Order</Link>
-                        </li>
-                        <li className={styles.navItem}>
-                            <Link className={styles.navLink} to="/order-details">📋 Order Details</Link>
                         </li>
                     </ul>
                 </div>

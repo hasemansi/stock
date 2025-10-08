@@ -24,6 +24,10 @@ import UpdateSupplier from "./components/Pages/Suppliers/UpdateSupplier";
 import Product from "./components/Pages/Products/Product";
 import AddProduct from "./components/Pages/Products/AddProduct";
 import UpdateProduct from "./components/Pages/Products/UpdateProduct";
+import Order from "./components/Pages/Orders/Order";
+import AddOrder from "./components/Pages/Orders/AddOrder";
+import UpdateOrder from "./components/Pages/Orders/UpdateOrder";
+import OrderDetails from "./components/Pages/Orders/OrderDetails";
 
 function App() {
   return (
@@ -48,12 +52,16 @@ function App() {
         <Route path="/dept-faculty" element={<DeptFaculty />} />
         <Route path="/add-deptfaculty" element={<AddDeptFaculty />} />
         <Route path="/update-deptfaculty/:id" element={<UpdateDeptFaculty />} />
-         <Route path="/suppliers" element={<Suppliers />} />
+        <Route path="/suppliers" element={<Suppliers />} />
         <Route path="/add-supplier" element={<AddSupplier />} />
         <Route path="/update-supplier/:id" element={< UpdateSupplier />} />
         <Route path="/products" element={<Product />} />
         <Route path="/add-product" element={<AddProduct />} />
         <Route path="/update-product/:id" element={< UpdateProduct />} />
+        <Route path="/orders" element={<Order />} />
+        <Route path="/add-order" element={<AddOrder />} />
+        <Route path="/update-order/:id" element={< UpdateOrder />} />
+        <Route path="/order-details" element={< OrderDetails />} />
       </Routes>
     </Router>
   );
