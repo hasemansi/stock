@@ -1,0 +1,49 @@
+.productTable {
+  padding: 20px;
+}
+
+.productTable table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.productTable th,
+.productTable td {
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.addProduct,
+.updateProduct {
+  max-width: 600px;
+  margin: auto;
+}
+
+.addProductForm,
+.updateProductForm {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.inputGroup label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.inputGroup input,
+.inputGroup textarea,
+.inputGroup select {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+button.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}

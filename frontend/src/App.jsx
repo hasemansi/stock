@@ -18,6 +18,13 @@ import DeptFaculty from "./components/Pages/DeptFaculty/DeptFaculty";
 import AddDeptFaculty from "./components/Pages/DeptFaculty/AddDeptFaculty";
 import UpdateDeptFaculty from "./components/Pages/DeptFaculty/UpdateDeptFaculty";
 import DashboardHome from "./components/Auth/DashboardHome";
+import Suppliers from "./components/Pages/Suppliers/Supplier";
+import AddSupplier from "./components/Pages/Suppliers/AddSupplier";
+import UpdateSupplier from "./components/Pages/Suppliers/UpdateSupplier";
+import Product from "./components/Pages/Products/Product";
+import AddProduct from "./components/Pages/Products/AddProduct";
+import UpdateProduct from "./components/Pages/Products/UpdateProduct";
+
 function App() {
   return (
     <Router>
@@ -41,6 +48,12 @@ function App() {
         <Route path="/dept-faculty" element={<DeptFaculty />} />
         <Route path="/add-deptfaculty" element={<AddDeptFaculty />} />
         <Route path="/update-deptfaculty/:id" element={<UpdateDeptFaculty />} />
+         <Route path="/suppliers" element={<Suppliers />} />
+        <Route path="/add-supplier" element={<AddSupplier />} />
+        <Route path="/update-supplier/:id" element={< UpdateSupplier />} />
+        <Route path="/products" element={<Product />} />
+        <Route path="/add-product" element={<AddProduct />} />
+        <Route path="/update-product/:id" element={< UpdateProduct />} />
       </Routes>
     </Router>
   );

@@ -12,6 +12,10 @@ import roleRoute from "./routes/roleRoute.js";
 import facultyRoutes from "./routes/facultyRoute.js";
 import deptFaculty from './routes/deptFacultyRoutes.js';
 
+import supplierRoutes from "./routes/supplierRoute.js";
+import productRoute from "./routes/productRoute.js"
+
+
 const app = express();
 const PORT = process.env.PORT || 3001;
 
@@ -29,9 +33,10 @@ app.use('/api/auth', authRoute);
 app.use('/api/colleges', collegeRoute);  // ✅ better to mount with /api/colleges
 app.use('/api/departments', departmentRoute);
 app.use('/api/roles', roleRoute);
-app.use('/api/faculties',facultyRoutes);
-app.use('/api/deptFaculty',deptFaculty);
-
+app.use('/api/faculties', facultyRoutes);
+app.use('/api/deptFaculty', deptFaculty);
+app.use("/api/suppliers", supplierRoutes);
+app.use("/api/products", productRoute)
 
 // Connect DB and Start Server
 const startServer = async () => {

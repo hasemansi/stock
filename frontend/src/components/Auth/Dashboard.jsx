@@ -45,10 +45,10 @@ export default function Dashboard({ children }) {
                     <h3 className={styles.sectionTitle}>Inventory</h3>
                     <ul className={styles.navList}>
                         <li className={styles.navItem}>
-                            <Link className={styles.navLink} to="/supplier">🚚 Supplier</Link>
+                            <Link className={styles.navLink} to="/suppliers">🚚 Supplier</Link>
                         </li>
                         <li className={styles.navItem}>
-                            <Link className={styles.navLink} to="/product">📦 Product</Link>
+                            <Link className={styles.navLink} to="/products">📦 Product</Link>
                         </li>
                     </ul>
                 </div>
