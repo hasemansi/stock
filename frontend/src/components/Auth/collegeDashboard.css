@@ -1,0 +1,174 @@
+/* General Layout */
+.college-dashboard {
+  padding: 2rem;
+  background: #f7f9fc;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+}
+
+.dashboard-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #1e293b;
+  text-align: center;
+}
+
+/* Summary Cards Grid */
+.summary-section {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.summary-card {
+  flex: 1;
+  min-width: 200px;
+  background: white;
+  border-radius: 15px;
+  padding: 1.2rem;
+  color: white;
+  text-align: center;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
+  transition: 0.3s ease;
+}
+
+.summary-card:hover {
+  transform: translateY(-5px);
+}
+
+.summary-card i {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.summary-card h4 {
+  margin: 0.2rem 0;
+  font-weight: 600;
+}
+
+.summary-card p {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+/* Status Section */
+.status-section {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.status-card {
+  flex: 1;
+  min-width: 250px;
+  border-radius: 12px;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+
+.status-card i {
+  font-size: 1.8rem;
+}
+
+.status-card h4 {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+}
+
+.status-card p {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+/* Colors */
+.bg-blue { background: linear-gradient(135deg, #2563eb, #3b82f6); }
+.bg-green { background: linear-gradient(135deg, #16a34a, #22c55e); }
+.bg-yellow { background: linear-gradient(135deg, #eab308, #facc15); }
+.bg-purple { background: linear-gradient(135deg, #8b5cf6, #a78bfa); }
+.bg-indigo { background: linear-gradient(135deg, #4338ca, #6366f1); }
+.bg-red { background: linear-gradient(135deg, #dc2626, #ef4444); }
+.bg-pending { background: linear-gradient(135deg, #f59e0b, #fbbf24); }
+.bg-approved { background: linear-gradient(135deg, #059669, #10b981); }
+
+/* Chart Section */
+.chart-section {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  margin-bottom: 2rem;
+}
+
+.chart-section h3 {
+  margin-bottom: 1rem;
+  color: #1f2937;
+  font-weight: 600;
+}
+
+/* Recent Orders */
+.recent-section {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  margin-bottom: 2rem;
+}
+
+.recent-section h3 {
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.recent-section table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.recent-section th,
+.recent-section td {
+  border-bottom: 1px solid #e5e7eb;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.recent-section th {
+  background: #f3f4f6;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #555;
+}
+
+.recent-section tr:hover {
+  background: #f9fafb;
+}
+
+/* Buttons */
+.dashboard-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.btn {
+  padding: 0.7rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn.primary { background: #2563eb; }
+.btn.success { background: #16a34a; }
+
+.btn:hover {
+  transform: translateY(-3px);
+  opacity: 0.9;
+}

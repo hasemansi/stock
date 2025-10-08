@@ -1,96 +1,87 @@
 import Product from "../models/productModel.js";
-import Supplier from "../models/supplierModel.js";
+import mongoose from "mongoose";
 
-// Create Product
+const isValidObjectId = (id) => mongoose.Types.ObjectId.isValid(id);
+
+// Create a new product
 export const createProduct = async (req, res) => {
     try {
-        const { name, description, price, quantity, supplier } = req.body;
+        const { name, description, price } = req.body;
 
-        if (!name || !price || !quantity || !supplier) {
-            return res.status(400).json({ message: "All required fields must be provided" });
+        if (!name || price === undefined) {
+            return res.status(400).json({ message: "Name and price are required." });
         }
 
-        // Check supplier exists
-        const supplierExists = await Supplier.findById(supplier);
-        if (!supplierExists) {
-            return res.status(400).json({ message: "Supplier does not exist" });
-        }
-
-        const product = await Product.create({ name, description, price, quantity, supplier });
+        const product = await Product.create({ name, description, price });
         res.status(201).json({ message: "Product created successfully", product });
-    } catch (error) {
-        res.status(500).json({ errorMessage: error.message });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ message: "Error creating product", error: err.message });
     }
 };
 
-// Get all products with supplier info
+// Get all products
 export const getAllProducts = async (req, res) => {
     try {
-        const products = await Product.find().populate("supplier", "name email phone address");
-        if (!products || products.length === 0) {
-            return res.status(404).json({ message: "No products found." });
-        }
+        const products = await Product.find();
         res.status(200).json(products);
-    } catch (error) {
-        res.status(500).json({ errorMessage: error.message });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ message: "Error fetching products", error: err.message });
     }
 };
 
-// Get product by ID
+// Get a single product by ID
 export const getProductById = async (req, res) => {
     try {
         const { id } = req.params;
-        const product = await Product.findById(id).populate("supplier", "name email phone address");
-        if (!product) {
-            return res.status(404).json({ message: "Product not found." });
-        }
+        if (!isValidObjectId(id)) return res.status(400).json({ message: "Invalid product id." });
+
+        const product = await Product.findById(id);
+        if (!product) return res.status(404).json({ message: "Product not found." });
+
         res.status(200).json(product);
-    } catch (error) {
-        res.status(500).json({ errorMessage: error.message });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ message: "Error fetching product", error: err.message });
     }
 };
 
-// Update Product
+// Update a product by ID
 export const updateProduct = async (req, res) => {
     try {
         const { id } = req.params;
-        const { name, description, price, quantity, supplier } = req.body;
+        if (!isValidObjectId(id)) return res.status(400).json({ message: "Invalid product id." });
 
-        if (supplier) {
-            const supplierExists = await Supplier.findById(supplier);
-            if (!supplierExists) {
-                return res.status(400).json({ message: "Supplier does not exist" });
-            }
-        }
+        const { name, description, price } = req.body;
 
         const updatedProduct = await Product.findByIdAndUpdate(
             id,
-            { name, description, price, quantity, supplier },
+            { name, description, price },
             { new: true }
-        ).populate("supplier", "name email phone address");
+        );
 
-        if (!updatedProduct) {
-            return res.status(404).json({ message: "Product not found." });
-        }
+        if (!updatedProduct) return res.status(404).json({ message: "Product not found." });
 
-        res.status(200).json(updatedProduct);
-    } catch (error) {
-        res.status(500).json({ errorMessage: error.message });
+        res.status(200).json({ message: "Product updated successfully", product: updatedProduct });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ message: "Error updating product", error: err.message });
     }
 };
 
-// Delete Product
+// Delete a product by ID
 export const deleteProduct = async (req, res) => {
     try {
         const { id } = req.params;
-        const product = await Product.findById(id);
-        if (!product) {
-            return res.status(404).json({ message: "Product not found." });
-        }
+        if (!isValidObjectId(id)) return res.status(400).json({ message: "Invalid product id." });
 
-        await Product.findByIdAndDelete(id);
-        res.status(200).json({ message: "Product deleted successfully!" });
-    } catch (error) {
-        res.status(500).json({ errorMessage: error.message });
+        const deleted = await Product.findByIdAndDelete(id);
+        if (!deleted) return res.status(404).json({ message: "Product not found." });
+
+        res.status(200).json({ message: "Product deleted successfully." });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ message: "Error deleting product", error: err.message });
     }
 };

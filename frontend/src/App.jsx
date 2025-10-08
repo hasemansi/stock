@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./components/Auth/Login";
 import Register from "./components/Auth/Register";
-import Dashboard from "./components/Auth/Dashboard";
+import CollegeDashboard from "./components/Auth/CollegeDashboard";
 import College from "./components/Pages/getCollege/College";
 import AddCollege from "./components/Pages/addClg/addCollege";
 import UpdateCollege from "./components/Pages/updateClg/UpdateCollege";
@@ -17,7 +17,7 @@ import UpdateFaculty from "./components/Pages/Faculty/UpdateFaculty";
 import DeptFaculty from "./components/Pages/DeptFaculty/DeptFaculty";
 import AddDeptFaculty from "./components/Pages/DeptFaculty/AddDeptFaculty";
 import UpdateDeptFaculty from "./components/Pages/DeptFaculty/UpdateDeptFaculty";
-import DashboardHome from "./components/Auth/DashboardHome";
+
 import Suppliers from "./components/Pages/Suppliers/Supplier";
 import AddSupplier from "./components/Pages/Suppliers/AddSupplier";
 import UpdateSupplier from "./components/Pages/Suppliers/UpdateSupplier";
@@ -40,7 +40,7 @@ function App() {
         <Route path="/" element={<Login />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/dashboard" element={<DashboardHome />} />
+        <Route path="/dashboard" element={<CollegeDashboard />} />
         <Route path="/colleges" element={<College />} />
         <Route path="/add-college" element={<AddCollege />} />
         <Route path="/update-college/:id" element={<UpdateCollege />} />

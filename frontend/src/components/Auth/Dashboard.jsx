@@ -34,9 +34,9 @@ export default function Dashboard({ children }) {
                             <Link className={styles.navLink} to="/faculties">👩‍🏫 Faculty</Link>
                         </li>
 
-                        <li className={styles.navItem}>
+                        {/* <li className={styles.navItem}>
                             <Link className={styles.navLink} to="/dept-faculty">🔗 Dept-Faculty</Link>
-                        </li>
+                        </li> */}
                     </ul>
                 </div>
 

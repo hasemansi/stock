@@ -82,33 +82,7 @@ const AddProduct = () => {
                         />
                     </div>
 
-                    <div className="inputGroup">
-                        <label>Quantity:</label>
-                        <input
-                            type="number"
-                            name="quantity"
-                            value={product.quantity}
-                            onChange={handleChange}
-                            required
-                        />
-                    </div>
 
-                    <div className="inputGroup">
-                        <label>Supplier:</label>
-                        <select
-                            name="supplier"
-                            value={product.supplier}
-                            onChange={handleChange}
-                            required
-                        >
-                            <option value="">Select Supplier</option>
-                            {suppliers.map((s) => (
-                                <option key={s._id} value={s._id}>
-                                    {s.name} ({s.company})
-                                </option>
-                            ))}
-                        </select>
-                    </div>
 
                     <div className="inputGroup">
                         <button type="submit" className="btn btn-primary">

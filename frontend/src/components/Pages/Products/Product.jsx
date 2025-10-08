@@ -45,8 +45,6 @@ const Product = () => {
                             <th>Product Name</th>
                             <th>Description</th>
                             <th>Price (₹)</th>
-                            <th>Quantity</th>
-                            <th>Supplier</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -57,8 +55,6 @@ const Product = () => {
                                 <td>{p.name}</td>
                                 <td>{p.description}</td>
                                 <td>{p.price}</td>
-                                <td>{p.quantity}</td>
-                                <td>{p.supplier?.name || "N/A"}</td>
                                 <td>
                                     <Link to={`/update-product/${p._id}`} className="btn btn-success me-2">
                                         <i className="fa-solid fa-pen-to-square"></i>

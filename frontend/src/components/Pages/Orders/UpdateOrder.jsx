@@ -3,49 +3,117 @@ import Dashboard from "../../Auth/Dashboard";
 import axios from "axios";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import toast from "react-hot-toast";
-import "./order.css";
+import "./updateOrder.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
 const UpdateOrder = () => {
-  const [order, setOrder] = useState({
-    department: "",
-    supplier: "",
-    products: [],
-    totalAmount: "",
-    status: "",
-  });
-  const [departments, setDepartments] = useState([]);
-  const [suppliers, setSuppliers] = useState([]);
-  const [products, setProducts] = useState([]);
   const { id } = useParams();
   const navigate = useNavigate();
 
+  const [order, setOrder] = useState({
+    department: "",
+    supplier: "",
+    products: [{ product: "", quantity: 1, price: 0 }],
+    status: "Pending",
+  });
+
+  const [departments, setDepartments] = useState([]);
+  const [suppliers, setSuppliers] = useState([]);
+  const [allProducts, setAllProducts] = useState([]);
+
+  // Fetch initial data
   useEffect(() => {
-    axios.get("http://localhost:3001/api/departments").then(res => setDepartments(res.data));
-    axios.get("http://localhost:3001/api/suppliers").then(res => setSuppliers(res.data));
-    axios.get("http://localhost:3001/api/products").then(res => setProducts(res.data));
-    axios.get(`http://localhost:3001/api/orders/${id}`).then(res => setOrder(res.data));
+    const fetchData = async () => {
+      try {
+        const [deptRes, suppRes, prodRes, orderRes] = await Promise.all([
+          axios.get("http://localhost:3001/api/departments"),
+          axios.get("http://localhost:3001/api/suppliers"),
+          axios.get("http://localhost:3001/api/products"),
+          axios.get(`http://localhost:3001/api/orders/${id}`),
+        ]);
+
+        setDepartments(deptRes.data);
+        setSuppliers(suppRes.data);
+        setAllProducts(prodRes.data);
+
+        const ord = orderRes.data;
+
+        const mappedProducts = ord.products.map((p) => ({
+          product: p.product?._id || p.product,
+          quantity: p.quantity,
+          price: p.price,
+        }));
+
+        setOrder({
+          department: ord.department?._id || ord.department,
+          supplier: ord.supplier?._id || ord.supplier,
+          products: mappedProducts.length > 0 ? mappedProducts : [{ product: "", quantity: 1, price: 0 }],
+          status: ord.status,
+        });
+      } catch (err) {
+        console.error(err);
+        toast.error("Error loading order data");
+      }
+    };
+    fetchData();
   }, [id]);
 
+  // Handle department, supplier
   const handleChange = (e) => {
     const { name, value } = e.target;
     setOrder({ ...order, [name]: value });
   };
 
-  const handleProductChange = (e) => {
-    const selected = Array.from(e.target.selectedOptions, (opt) => opt.value);
-    setOrder({ ...order, products: selected });
+  // Handle product changes
+  const handleProductChange = (index, field, value) => {
+    const newProducts = [...order.products];
+    newProducts[index][field] = field === "quantity" || field === "price" ? Number(value) : value;
+    setOrder({ ...order, products: newProducts });
   };
 
+  // Add a new product row
+  const addProductRow = () => {
+    setOrder({ ...order, products: [...order.products, { product: "", quantity: 1, price: 0 }] });
+  };
+
+  // Remove product row
+  const removeProductRow = (index) => {
+    const newProducts = [...order.products];
+    newProducts.splice(index, 1);
+    setOrder({ ...order, products: newProducts });
+  };
+
+  // Calculate total amount
+  const calculateTotal = () => {
+    return order.products.reduce((sum, p) => sum + p.quantity * p.price, 0);
+  };
+
+  // Submit updated order
   const submitForm = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:3001/api/orders/${id}`, order);
+      const payload = {
+        ...order,
+        totalAmount: calculateTotal(),
+      };
+      await axios.put(`http://localhost:3001/api/orders/${id}`, payload);
       toast.success("Order updated successfully!");
       navigate("/orders");
     } catch (err) {
       console.error(err);
       toast.error("Error updating order");
+    }
+  };
+
+  // Receive stock and approve order
+  const receiveStock = async () => {
+    try {
+      const res = await axios.put(`http://localhost:3001/api/orders/receive-stock/${id}`);
+      setOrder(res.data.order); // Update order state
+      toast.success("Stock received and order approved!");
+    } catch (err) {
+      console.error(err);
+      toast.error("Error receiving stock");
     }
   };
 
@@ -59,6 +127,15 @@ const UpdateOrder = () => {
         <h3>
           <i className="fas fa-edit"></i> Update Order
         </h3>
+
+        {/* Receive Stock Button */}
+        {order.status === "Pending" && (
+          <div style={{ marginBottom: "15px", textAlign: "right" }}>
+            <button type="button" onClick={receiveStock} className="btn btn-success">
+              <i className="fas fa-box"></i> Receive Stock
+            </button>
+          </div>
+        )}
 
         <form className="orderForm" onSubmit={submitForm}>
           <div className="inputGroup">
@@ -83,33 +160,54 @@ const UpdateOrder = () => {
 
           <div className="inputGroup">
             <label>Products:</label>
-            <select multiple name="products" value={order.products} onChange={handleProductChange}>
-              {products.map((p) => (
-                <option key={p._id} value={p._id}>
-                  {p.name}
-                </option>
-              ))}
-            </select>
+            {order.products.map((p, index) => (
+              <div key={index} className="productRow">
+                <select
+                  value={p.product}
+                  onChange={(e) => handleProductChange(index, "product", e.target.value)}
+                  required
+                >
+                  <option value="">-- Select Product --</option>
+                  {allProducts.map((prod) => (
+                    <option key={prod._id} value={prod._id}>{prod.name}</option>
+                  ))}
+                </select>
+                <input
+                  type="number"
+                  min="1"
+                  value={p.quantity}
+                  onChange={(e) => handleProductChange(index, "quantity", e.target.value)}
+                  placeholder="Quantity"
+                  required
+                />
+                <input
+                  type="number"
+                  min="0"
+                  value={p.price}
+                  onChange={(e) => handleProductChange(index, "price", e.target.value)}
+                  placeholder="Price"
+                  required
+                />
+                {order.products.length > 1 && (
+                  <button type="button" onClick={() => removeProductRow(index)} className="btn-remove">
+                    <i className="fas fa-trash-alt"></i>
+                  </button>
+                )}
+              </div>
+            ))}
+            <button type="button" onClick={addProductRow} className="btn-add-product">
+              <i className="fas fa-plus-circle"></i> Add Product
+            </button>
           </div>
 
           <div className="inputGroup">
             <label>Total Amount (₹):</label>
-            <input
-              type="number"
-              name="totalAmount"
-              value={order.totalAmount}
-              onChange={handleChange}
-              required
-            />
+            <input type="number" value={calculateTotal()} readOnly />
           </div>
 
           <div className="inputGroup">
             <label>Status:</label>
-            <select name="status" value={order.status} onChange={handleChange}>
-              <option value="Pending">Pending</option>
-              <option value="Completed">Completed</option>
-              <option value="Cancelled">Cancelled</option>
-            </select>
+            <input type="text" value={order.status} readOnly />
           </div>
 
           <div className="inputGroup">
