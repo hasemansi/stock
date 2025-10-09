@@ -52,9 +52,9 @@ const CollegeDashboard = () => {
 
   return (
     <Dashboard>
-      <div className="college-dashboard">
-        <h2 className="dashboard-title">College Stock Management Dashboard</h2>
 
+      <div className="college-dashboard">
+        {/* <h2 className="dashboard-title">College Stock Management Dashboard</h2> */}
         {/* Summary Section */}
         <div className="summary-section">
           <div className="summary-card bg-blue"><i className="fa fa-building"></i><h4>Departments</h4><p>{summary.departments}</p></div>
@@ -71,7 +71,7 @@ const CollegeDashboard = () => {
           <div className="status-card bg-approved"><i className="fa fa-check-circle"></i><h4>Approved Orders</h4><p>{summary.approvedOrders}</p></div>
         </div>
 
-       
+
 
         {/* Recent Activity */}
         <div className="recent-section">
