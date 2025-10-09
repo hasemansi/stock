@@ -71,19 +71,7 @@ const CollegeDashboard = () => {
           <div className="status-card bg-approved"><i className="fa fa-check-circle"></i><h4>Approved Orders</h4><p>{summary.approvedOrders}</p></div>
         </div>
 
-        {/* Chart Section */}
-        <div className="chart-section">
-          <h3>Product Stock Overview</h3>
-          <ResponsiveContainer width="100%" height={300}>
-            <BarChart data={productChart}>
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="name" />
-              <YAxis />
-              <Tooltip />
-              <Bar dataKey="quantity" fill="#4f46e5" />
-            </BarChart>
-          </ResponsiveContainer>
-        </div>
+       
 
         {/* Recent Activity */}
         <div className="recent-section">

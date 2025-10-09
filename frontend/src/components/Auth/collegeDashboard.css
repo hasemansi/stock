@@ -26,31 +26,34 @@
 .summary-card {
   flex: 1;
   min-width: 200px;
-  background: white;
+  background: #2e8aa9; /* Single deep blue color */
   border-radius: 15px;
-  padding: 1.2rem;
-  color: white;
+  padding: 1.5rem;
+  color: #fff;
   text-align: center;
-  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   transition: 0.3s ease;
 }
 
 .summary-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
 }
 
 .summary-card i {
   font-size: 2rem;
   margin-bottom: 0.5rem;
+  color: #38bdf8; /* Accent icon color */
 }
 
 .summary-card h4 {
   margin: 0.2rem 0;
   font-weight: 600;
+  font-size: 1.1rem;
 }
 
 .summary-card p {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: 700;
 }
 
@@ -66,14 +69,22 @@
   flex: 1;
   min-width: 250px;
   border-radius: 12px;
-  color: white;
+  background: #249160; /* Single color */
+  color: #fff;
   text-align: center;
   padding: 1rem;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  transition: 0.3s ease;
+}
+
+.status-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.18);
 }
 
 .status-card i {
   font-size: 1.8rem;
+  color: #38bdf8; /* Accent icon color */
 }
 
 .status-card h4 {
@@ -86,22 +97,12 @@
   font-weight: 700;
 }
 
-/* Colors */
-.bg-blue { background: linear-gradient(135deg, #2563eb, #3b82f6); }
-.bg-green { background: linear-gradient(135deg, #16a34a, #22c55e); }
-.bg-yellow { background: linear-gradient(135deg, #eab308, #facc15); }
-.bg-purple { background: linear-gradient(135deg, #8b5cf6, #a78bfa); }
-.bg-indigo { background: linear-gradient(135deg, #4338ca, #6366f1); }
-.bg-red { background: linear-gradient(135deg, #dc2626, #ef4444); }
-.bg-pending { background: linear-gradient(135deg, #f59e0b, #fbbf24); }
-.bg-approved { background: linear-gradient(135deg, #059669, #10b981); }
-
 /* Chart Section */
 .chart-section {
   background: white;
   border-radius: 12px;
   padding: 1.5rem;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
   margin-bottom: 2rem;
 }
 
@@ -111,12 +112,12 @@
   font-weight: 600;
 }
 
-/* Recent Orders */
+/* Recent Orders Section */
 .recent-section {
   background: white;
   border-radius: 12px;
   padding: 1.5rem;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
   margin-bottom: 2rem;
 }
 
@@ -165,7 +166,7 @@
   transition: all 0.3s ease;
 }
 
-.btn.primary { background: #2563eb; }
+.btn.primary { background: #0e223f; }
 .btn.success { background: #16a34a; }
 
 .btn:hover {
